@@ -16,7 +16,7 @@
          restrict: 'E',
          scope: { },
          link: function(scope, element, attributes) {
-           scope.value = 0;
+             scope.value = 0;
              scope.max = 100;
 
              var seekBar = $(element);
@@ -30,6 +30,10 @@
 
              scope.fillStyle = function() {
                  return {width: percentString()};
+             };
+
+             scope.thumbStyle = function() {
+                 return {value: calculatePercent()};
              };
 
              scope.onClickSeekBar = function(event) {
